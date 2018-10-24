@@ -1,14 +1,29 @@
 class Simulation():
-    """ Class setups parameters for simulation, runs SERPENT, parse output and create input. 
+    """ Class setups parameters for simulation, runs SERPENT, parse output,
+    create input.
     """
 
-    def __init__(self, sim_name, cores, nodes, bw, sss_exec_path, restart, timestep, t_0, t_final, input_filename, db_filename, connection_graph):
+    def __init__(
+            self,
+            sim_name,
+            cores,
+            nodes,
+            bw,
+            sss_exec_path,
+            restart,
+            timestep,
+            t_0,
+            t_final,
+            input_filename,
+            db_filename,
+            connection_graph):
         """ Initializes the class
 
         Parameters:
         -----------
         sim_name: string
-            name of simulation may contain number of reference case, paper name or other specific information to identify simulation
+            name of simulation may contain number of reference case, paper name
+             or other specific information to identify simulation
         cores: int
             number of cores to use for SERPENT run
         nodes: int
@@ -22,11 +37,13 @@ class Simulation():
         timestep: int
             duration of each depletion simulation
         t_0: int
-            beggining of simulation moment in time (0 for new run, >0 when restarting)
+            beggining of simulation moment in time (0 for new run, >0 when
+             restarting)
         t_final: int
             duration of whole Saltproc simulation
         input_filename: string
-            name of JSON input file with reprocessing scheme and parameters for Saltproc simulation
+            name of JSON input file with reprocessing scheme and parameters for
+             Saltproc simulation
         db_file: string
             name of HDF5 database
         connection_graph: dict
@@ -35,22 +52,37 @@ class Simulation():
         """
 
     def runsim(self):
+        return
 
     def steptime(self):
+        return
 
     def loadinput_sp(self):
+        return
 
     def init_db(self):
+        return
 
     def reopen_db(self):
+        return
 
     def write_db(self):
+        return
 
-class Materialflow ():
-    """ Class contains information about material flow and methods how insert and extract elements to|from the flow.
+
+class Materialflow():
+    """ Class contains information about material flow and methods how insert
+     and extract elements to|from the flow.
     """
 
-    def __init__(self, mat_name, n_iso, mass, rho, mass_flowrate, vol_flowrate):
+    def __init__(
+            self,
+            mat_name,
+            n_iso,
+            mass,
+            rho,
+            mass_flowrate,
+            vol_flowrate):
         """ Initializes the class
 
         Parameters:
@@ -63,22 +95,42 @@ class Materialflow ():
             mass of isotopes in the material flow (g)
         rho: float
             density of the material flow (g/cm**3)
-        mass_flowrate: float 
+        mass_flowrate: float
             mass flow rate of the material flow (g/s)
         vol_flowrate: float
-            volumetric flow rate of the material flow through reactor  (cm**3/s)
+            volumetric flow rate of the material flow through reactor (cm**3/s)
         """
 
     def conservationchecker(self):
+        return
 
     def insert(self):
+        return
 
     def extrac(self):
+        return
+
 
 class Reactor ():
-    """ Class contains information about current state of the reactor and initiate the reactor depletion. """
+    """ Class contains information about current state of the reactor and
+     initiate the reactor depletion.
+    """
 
-    def __init__(self, name, volume, mass_flowrate, power_level, fp_powdens, composition, mthm, sss_template_filename, sss_input_filename, sss_output_filename, npop, active_cycles, inactive_cycles):
+    def __init__(
+            self,
+            name,
+            volume,
+            mass_flowrate,
+            power_level,
+            fp_powdens,
+            composition,
+            mthm,
+            sss_template_filename,
+            sss_input_filename,
+            sss_output_filename,
+            npop,
+            active_cycles,
+            inactive_cycles):
         """ Initializes the class
 
         Parameters:
@@ -94,11 +146,13 @@ class Reactor ():
         fp_powdens: float
             full power density (kW/g) in depletion simulation (SERPENT)
         composition: array [iso x T x number of depleted materials]
-            mass of each isotope for the end of each timestep for every fluid (g)
+            mass of each isotope for the end of each timestep for every fluid
+            (g)
         mthm: array [Tx1]
             metric tons of heavy metals for the end of each time step (MTHM)
         sss_template_filename: string
-            name of user SERPENT input file with geometry and initial composition
+            name of user SERPENT input file with geometry and initial
+             composition
         sss_input_filename: string
             name of SERPENT input file
         sss_output_filename: string
@@ -112,9 +166,13 @@ class Reactor ():
         """
 
     def run_serpent(self):
+        return
 
     def load_input(self):
+        return
 
     def outputhandle(self):
+        return
 
     def write_input(self):
+        return
