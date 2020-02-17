@@ -1,11 +1,11 @@
 from saltproc import Materialflow
-from pyne import nucname as pyname
+from saltproc import Process
 import numpy as np
 
 
-class Process():
-    """Class describes process which must be applied to Materialflow to change
-     burnable material composition.
+class Separator(Process):
+    """Class describes salt processing system `separator`. It inherits from the
+    process class and has attributes and methods intrinsics to separator,
      """
 
     def __init__(self,
@@ -13,7 +13,13 @@ class Process():
                  capacity=0.0,
                  volume=0.0,
                  efficiency={'Xe135': 1.0},
+                 interf_area=0.0,
                  ):
+        super().__init__(self,
+                         mass_flowrate,
+                         capacity,
+                         volume,
+                         efficiency)
         """ Initializes the Process object.
 
         Parameters
@@ -33,10 +39,7 @@ class Process():
                 removal efficency for the isotope (weight fraction)
         """
         # initialize all object attributes
-        self.mass_flowrate = mass_flowrate
-        self.capacity = capacity
-        self.volume = volume
-        self.efficiency = efficiency
+        self.a = interf_area
 
     def rem_elements(self, inflow):
         """Updates Materialflow object `inflow` after removal target isotopes

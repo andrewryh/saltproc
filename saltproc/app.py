@@ -159,7 +159,6 @@ def read_processes_from_input():
     processes = OrderedDict()
     with open(spc_inp_file) as f:
         j = json.load(f)
-        # print(j)
         for mat, value in j.items():
             processes[mat] = OrderedDict()
             for obj_name, obj_data in j[mat]['extraction_processes'].items():

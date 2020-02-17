@@ -1,0 +1,102 @@
+{
+  "fuel": {
+    "extraction_processes": {
+      "core_inlet": {
+        "capacity": 9920000,
+        "efficiency": {},
+        "mass_flowrate": 9920000,
+        "volume": 0
+      },
+      "core_outlet": {
+        "capacity": 9920000,
+        "efficiency": {},
+        "mass_flowrate": 9920000,
+        "volume": 0
+      },
+      "heat_exchanger": {
+        "capacity": 9920000,
+        "efficiency": {},
+        "mass_flowrate": 9920000,
+        "volume": 13700000
+      },
+      "bypass": {
+        "capacity": 9920000,
+        "efficiency": {},
+        "mass_flowrate": 8928000,
+        "volume": 1000000000
+      },
+      "sparger": {
+        "capacity": 9920000,
+        "efficiency": {
+          "Kr": "0.6",
+          "Xe": "0.6",
+          "H": "0.6"
+        },
+        "mass_flowrate": 9920000,
+        "volume": 10000000
+      },
+      "entrainment_separator": {
+        "capacity": 9920000,
+        "efficiency": {
+          "Xe": "capacity/9990000"
+        },
+        "mass_flowrate": 9920000,
+        "volume": 11
+      },
+      "nickel_filter": {
+        "capacity": 9920000,
+        "efficiency": {
+          "Se": "1"
+        },
+        "mass_flowrate": 9920000,
+        "volume": 11
+      },
+      "liquid_metal": {
+        "capacity": 992000,
+        "efficiency": {
+          "Y": "0.6"
+        },
+        "mass_flowrate": 992000,
+        "volume": 11
+      }
+    },
+    "feeds": {
+      "leu": {
+        "density": 4.9602,
+        "volume": 100000000,
+        "mass": 496020000,
+        "comp": {
+          "Li-6": 0.000002418,
+          "Li-7": 0.0483577563,
+          "F-19": 0.3296428341,
+          "U-235": 0.0310998496,
+          "U-238": 0.590897142
+        }
+      }
+    }
+  },
+  "ctrlPois": {
+    "extraction_processes": {
+      "removal_tb_dy": {
+        "capacity": 1000,
+        "efficiency": {
+          "Tb": "0.21",
+          "Dy": "0.22"
+        },
+        "mass_flowrate": 0,
+        "volume": 11
+      }
+    },
+    "feeds": {
+      "pure_gd": {
+        "density": 5.873,
+        "volume": 10000,
+        "mass": 58730,
+        "comp": {
+          "Gd-158": 0.5,
+          "Gd-160": 0.5
+        }
+      }
+    }
+  }
+}
